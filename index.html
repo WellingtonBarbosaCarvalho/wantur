@@ -3,20 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WANTUR - Sua Viagem dos Sonhos Começa Aqui</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>WANTUR - Passagens Aéreas com 40% de Desconto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #007bff;
-            --deep-blue: #0056b3;
-            --dark-blue: #003d82;
-            --accent-green: #28a745;
-            --light-green: #20c997;
-            --bg-light: #f8faff;
-            --glass-white: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -24,30 +13,27 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
-            background: #000;
+            background: #fff;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Advanced Header */
+        /* Header Simples */
         header {
-            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,255,0.9) 100%);
-            padding: 1.5rem 0;
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,123,255,0.1);
-            transition: all 0.3s ease;
         }
 
         nav {
@@ -56,850 +42,557 @@
             align-items: center;
         }
 
-        /* Advanced Logo */
         .logo {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
-            position: relative;
+            color: #007bff;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.4s ease;
+            letter-spacing: 1px;
         }
 
-        .logo::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -10px;
-            right: -10px;
-            bottom: -5px;
-            background: linear-gradient(45deg, #007bff, #0056b3, #28a745, #20c997);
-            background-size: 400% 400%;
-            border-radius: 15px;
-            z-index: -1;
-            animation: gradientShift 4s ease infinite;
-            filter: blur(8px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .logo:hover::before {
-            opacity: 0.7;
-        }
-
-        .logo-text {
-            background: linear-gradient(45deg, #007bff, #0056b3, #28a745);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: logoShine 3s ease-in-out infinite;
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo::after {
-            content: '✈';
-            position: absolute;
-            top: -8px;
-            right: -25px;
-            font-size: 1rem;
-            color: #28a745;
-            animation: planeFly 2s ease-in-out infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes logoShine {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes planeFly {
-            0%, 100% { transform: translateX(0) rotate(0deg); }
-            50% { transform: translateX(5px) rotate(10deg); }
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.4s ease;
-            position: relative;
-            padding: 10px 20px;
-            border-radius: 25px;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, var(--primary-blue), var(--accent-green));
-            border-radius: 25px;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-links a:hover::before {
-            opacity: 0.1;
-            transform: scale(1);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-blue);
-            transform: translateY(-3px);
-        }
-
-        /* Epic Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #000428 0%, #004e92 25%, #007bff 50%, #0056b3 75%, #003d82 100%);
+        .trust-badge {
+            background: #28a745;
             color: white;
-            display: flex;
-            align-items: center;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Hero Section - Foco Total na Conversão */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8faff 0%, #fff 100%);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            animation: moveStars 20s linear infinite;
-        }
-
-        @keyframes moveStars {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-60px); }
-        }
-
-        .hero-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            animation: floatParticle 6s ease-in-out infinite;
-        }
-
-        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 1s; }
-        .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 2s; }
-        .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 1.5s; }
-        .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 3s; }
-        .particle:nth-child(6) { width: 7px; height: 7px; left: 60%; animation-delay: 0.5s; }
-        .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 2.5s; }
-        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 1s; }
-        .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 3.5s; }
-
-        @keyframes floatParticle {
-            0%, 100% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            90% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            100% {
-                transform: translateY(-100px) scale(0);
-                opacity: 0;
-            }
         }
 
         .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 12px 30px;
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            animation: slideUp 1s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-badge::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            animation: slideUp 1s ease-out 0.3s both;
+            color: #333;
+            margin-bottom: 1rem;
             line-height: 1.1;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #fff, #e3f2fd, #fff);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideUp 1s ease-out 0.3s both, textShine 4s ease-in-out infinite;
         }
 
-        @keyframes textShine {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero p {
+        .hero-subtitle {
             font-size: 1.4rem;
+            color: #666;
             margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: slideUp 1s ease-out 0.6s both;
-            opacity: 0.9;
-            line-height: 1.7;
-            font-weight: 400;
+            font-weight: 500;
         }
 
-        .cta-group {
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            border-radius: 20px;
+            margin: 2rem auto;
             display: flex;
-            gap: 2rem;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            animation: slideUp 1s ease-out 0.9s both;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #28a745, #20c997, #17a2b8);
-            background-size: 200% 200%;
+        /* CTA Principal - Máximo Contraste */
+        .cta-primary {
+            background: #ff4757;
             color: white;
             padding: 20px 50px;
-            text-decoration: none;
-            border-radius: 50px;
+            font-size: 1.3rem;
             font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, #28a745, #20c997, #17a2b8, #28a745);
-            background-size: 400% 400%;
+            border: none;
             border-radius: 50px;
-            z-index: -1;
-            animation: gradientMove 3s ease infinite;
-        }
-
-        .cta-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.6s ease;
-        }
-
-        .cta-button:hover::after {
-            width: 300px;
-            height: 300px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 60px rgba(40, 167, 69, 0.4);
-        }
-
-        @keyframes gradientMove {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .cta-secondary {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Advanced Features Section */
-        .features {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #f8faff 0%, #e3f2fd 50%, #fff 100%);
-            position: relative;
-        }
-
-        .features::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(180deg, #003d82 0%, transparent 100%);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-badge {
+            cursor: pointer;
+            text-decoration: none;
             display: inline-block;
-            background: linear-gradient(45deg, var(--primary-blue), var(--accent-green));
-            color: white;
-            padding: 8px 25px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            margin: 1rem;
+            transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
         }
 
-        .features h2 {
-            font-size: 3.5rem;
+        .cta-primary:hover {
+            background: #ff3742;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.4);
+        }
+
+        .urgency-text {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+            font-weight: 600;
+            color: #856404;
+        }
+
+        /* Benefícios - Layout Limpo */
+        .benefits {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
             color: #333;
-            position: relative;
-            background: linear-gradient(45deg, #333, #007bff, #333);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textFlow 4s ease-in-out infinite;
+            margin-bottom: 3rem;
         }
 
-        @keyframes textFlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .features-grid {
+        .benefit-item {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 5px solid #007bff;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .benefit-item p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Prova Social - Elementos de Confiança */
+        .social-proof {
+            padding: 80px 0;
+            background: #f8faff;
+        }
+
+        .social-proof h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-simple {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            padding: 3rem;
-            border-radius: 30px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, #007bff, #28a745, #007bff);
-            opacity: 0;
-            animation: rotate 4s linear infinite;
-            transition: opacity 0.3s ease;
-        }
-
-        .feature-card:hover::before {
-            opacity: 0.1;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .feature-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 30px 80px rgba(0, 123, 255, 0.2);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            display: block;
-            position: relative;
-            z-index: 2;
-        }
-
-        .feature-card h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #333;
-            position: relative;
-            z-index: 2;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Advanced Testimonials */
-        .testimonials {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #000428 0%, #004e92 50%, #007bff 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 0l100 100M100 0L0 100' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.1'/%3E%3C/svg%3E");
-            animation: bgMove 20s linear infinite;
-        }
-
-        @keyframes bgMove {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(-100px) translateY(-100px); }
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: 800;
+            gap: 2rem;
             margin-bottom: 3rem;
-            position: relative;
-            z-index: 2;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            padding: 3rem;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            font-size: 8rem;
-            color: rgba(255, 255, 255, 0.1);
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .testimonial-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #28a745;
         }
 
         .testimonial-text {
-            font-style: italic;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 2;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #333;
         }
 
         .testimonial-author {
-            font-weight: 700;
-            color: #fff;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
+            font-weight: 600;
+            color: #007bff;
         }
 
-        .testimonial-author::before {
-            content: '⭐⭐⭐⭐⭐';
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .trust-item {
+            text-align: center;
+            color: #666;
+        }
+
+        .trust-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #007bff;
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
         }
 
-        /* Epic CTA Section */
-        .cta-section {
-            padding: 120px 0;
-            background: linear-gradient(45deg, #28a745, #20c997, #17a2b8, #007bff);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
+        /* Formulário Otimizado */
+        .lead-capture {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-
-        .cta-section h2 {
-            font-size: 3.5rem;
+        .lead-capture h2 {
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 1rem;
         }
 
-        .cta-section p {
-            font-size: 1.4rem;
+        .lead-capture p {
+            font-size: 1.2rem;
             margin-bottom: 3rem;
-            max-width: 700px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            position: relative;
-            z-index: 2;
-            line-height: 1.7;
         }
 
-        /* Advanced Footer */
-        footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: white;
-            padding: 80px 0 30px;
-            position: relative;
+        .form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
+        .form-container h3 {
+            color: #333;
+            margin-bottom: 2rem;
             font-size: 1.5rem;
             font-weight: 700;
         }
 
-        .footer-section p, .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            line-height: 2;
-            font-size: 1.1rem;
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .cta-form {
+            background: #28a745;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            cursor: pointer;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .cta-form:hover {
+            background: #1e7e34;
+            transform: translateY(-2px);
+        }
+
+        .privacy-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Footer Simples */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #007bff;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: #007bff;
+            text-decoration: none;
         }
 
         .footer-section a:hover {
-            color: var(--primary-blue);
-            transform: translateX(5px);
+            color: #0056b3;
         }
 
-        .footer-bottom {
-            border-top: 1px solid #555;
-            padding-top: 30px;
-            margin-top: 50px;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-
-        /* Animations */
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(80px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scroll animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(80px);
-            transition: all 0.8s ease-out;
-        }
-
-        .animate-on-scroll.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
+        /* Responsivo */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
             .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .features h2, .testimonials h2, .cta-section h2 {
                 font-size: 2.5rem;
             }
             
-            .features-grid,
-            .testimonials-grid {
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .benefits-grid,
+            .testimonials-simple {
                 grid-template-columns: 1fr;
             }
             
-            .cta-group {
-                flex-direction: column;
-                align-items: center;
+            .trust-indicators {
+                gap: 1.5rem;
             }
+            
+            .form-container {
+                margin: 0 20px;
+                padding: 2rem;
+            }
+        }
+
+        /* Animações Simples */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">
-                <span class="logo-text">WANTUR</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <div class="logo">WANTUR</div>
+            <div class="trust-badge">✓ Empresa Familiar Confiável</div>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">✨ Empresa Familiar • Confiança • Tradição ✨</div>
-                <h1>Sua Viagem dos Sonhos Começa Aqui</h1>
-                <p>Na WANTUR, transformamos seus sonhos de viagem em realidade. Uma empresa familiar que conecta você aos melhores destinos do mundo com carinho, confiança e os melhores preços. Há mais de uma década realizando sonhos!</p>
-                <div class="cta-group">
-                    <a href="#contato" class="cta-button">Encontre Sua Passagem</a>
-                    <a href="#servicos" class="cta-button cta-secondary">Conheça Nossos Serviços</a>
+                <h1>Passagens 40% Mais Baratas</h1>
+                <p class="hero-subtitle">Empresa familiar há 15 anos. Mais de 50.000 clientes satisfeitos. Economize até R$ 2.000 por viagem.</p>
+                
+                <div class="hero-image">
+                    👨‍👩‍👧‍👦 ✈️ Famílias Viajando Felizes
                 </div>
+
+                <div class="urgency-text">
+                    🔥 <strong>OFERTA LIMITADA:</strong> Apenas 50 passagens com desconto especial disponíveis hoje!
+                </div>
+
+                <a href="#formulario" class="cta-primary">QUERO MINHA PASSAGEM AGORA</a>
+                
+                <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                    ✓ Sem taxas escondidas ✓ Emissão em 5 minutos ✓ Suporte 24h
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="features">
+    <section class="benefits">
         <div class="container">
-            <div class="section-header">
-                <div class="section-badge animate-on-scroll">Por que WANTUR?</div>
-                <h2 class="animate-on-scroll">Tradição Familiar em Cada Viagem</h2>
-                <p class="animate-on-scroll" style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Há anos cuidando dos sonhos de viagem das famílias brasileiras. Nossa experiência familiar garante o melhor atendimento e as melhores condições para você.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">💰</div>
-                    <h3>Melhores Preços Garantidos</h3>
-                    <p>Nossa experiência familiar nos permite negociar as melhores tarifas do mercado. Economize até 40% em suas passagens com nossa expertise de anos.</p>
+            <h2 class="fade-in">Por Que Escolher a WANTUR?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Economia Real de 40%</h3>
+                    <p>Preços exclusivos por sermos empresa familiar. Sem intermediários = mais economia para você.</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Atendimento Familiar Único</h3>
-                    <p>Somos uma família cuidando da sua família. Cada cliente é tratado com o carinho e atenção que dedicamos aos nossos próprios familiares.</p>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Emissão em 5 Minutos</h3>
+                    <p>Processo 100% digital. Sua passagem confirmada e enviada por email em poucos minutos.</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Destinos dos Sonhos</h3>
-                    <p>Acesso exclusivo aos melhores destinos nacionais e internacionais. De praias paradisíacas a aventuras urbanas - realizamos qualquer sonho de viagem.</p>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Garantia Total</h3>
+                    <p>Suporte 24/7 e proteção completa. Se algo der errado, resolvemos na hora.</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Proteção Total da Viagem</h3>
-                    <p>Sua tranquilidade é nossa prioridade. Suporte 24/7, seguro viagem incluído e parcerias apenas com as companhias aéreas mais confiáveis do mundo.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Emissão Instantânea</h3>
-                    <p>Tecnologia de ponta para emissão imediata. Sua passagem confirmada em segundos, para você viajar quando quiser, sem burocracia.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">💎</div>
-                    <h3>Experiência Premium</h3>
-                    <p>Mais que uma agência, somos curadores de experiências únicas. Cada viagem é planejada com mimo e dedicação exclusiva para criar memórias inesquecíveis.</p>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Atendimento Familiar</h3>
+                    <p>15 anos cuidando de famílias brasileiras. Cada cliente é tratado como família.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="depoimentos" class="testimonials">
+    <section class="social-proof">
         <div class="container">
-            <div class="section-header">
-                <div class="section-badge animate-on-scroll">Depoimentos Reais</div>
-                <h2 class="animate-on-scroll">Histórias de Sonhos Realizados</h2>
+            <h2 class="fade-in">O Que Nossos Clientes Dizem</h2>
+            <div class="testimonials-simple">
+                <div class="testimonial fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Economizei R$ 1.800 na viagem da família para Orlando. Atendimento impecável e processo super rápido!"</p>
+                    <div class="testimonial-author">- Maria Silva, São Paulo</div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Melhor preço que encontrei no mercado. Empresa séria, já comprei 3 passagens com eles."</p>
+                    <div class="testimonial-author">- João Santos, Rio de Janeiro</div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Atendimento familiar faz toda diferença. Senti confiança do início ao fim da compra."</p>
+                    <div class="testimonial-author">- Ana Costa, Belo Horizonte</div>
+                </div>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-text">
-                        "A WANTUR não apenas vendeu uma passagem, eles realizaram o sonho da nossa família! Nossa viagem à Disney foi perfeita do início ao fim. O cuidado familiar deles fez toda a diferença. Recomendo de coração!"
-                    </div>
-                    <div class="testimonial-author">Maria Silva • Família de São Paulo</div>
+
+            <div class="trust-indicators fade-in">
+                <div class="trust-item">
+                    <span class="trust-number">50.000+</span>
+                    <div>Clientes Atendidos</div>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-text">
-                        "Empresa familiar que realmente entende o valor dos momentos especiais. Nossa lua de mel foi mágica graças ao planejamento impecável da WANTUR. Já virei cliente fiel e indico para todos!"
-                    </div>
-                    <div class="testimonial-author">João & Ana Santos • Recém-casados</div>
+                <div class="trust-item">
+                    <span class="trust-number">15</span>
+                    <div>Anos no Mercado</div>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-text">
-                        "Depois de anos comprando com outras agências, descobri a WANTUR e a diferença é absurda! Preço melhor, atendimento humano e cuidado real. É a única agência que uso agora!"
-                    </div>
-                    <div class="testimonial-author">Carlos Costa • Executivo viajante</div>
+                <div class="trust-item">
+                    <span class="trust-number">98%</span>
+                    <div>Satisfação</div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">24h</span>
+                    <div>Suporte</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <section id="formulario" class="lead-capture">
         <div class="container">
-            <h2 class="animate-on-scroll">Pronto para Realizar Seu Sonho?</h2>
-            <p class="animate-on-scroll">Junte-se à família WANTUR e descubra por que milhares de brasileiros confiam em nós para suas viagens mais importantes. Sua aventura dos sonhos está a um clique de distância!</p>
-            <div class="cta-group">
-                <a href="#contato" class="cta-button animate-on-scroll">Quero Minha Passagem Agora</a>
+            <h2 class="fade-in">Receba Sua Oferta Personalizada</h2>
+            <p class="fade-in">Preencha abaixo e receba em 2 minutos as melhores opções com até 40% de desconto</p>
+            
+            <div class="form-container fade-in">
+                <h3>🎯 Encontre Sua Passagem Ideal</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nome Completo *</label>
+                        <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">WhatsApp *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="destination">Destino de Interesse</label>
+                        <select id="destination" name="destination">
+                            <option value="">Selecione um destino</option>
+                            <option value="orlando">Orlando/Disney</option>
+                            <option value="miami">Miami</option>
+                            <option value="nueva-york">Nova York</option>
+                            <option value="paris">Paris</option>
+                            <option value="londres">Londres</option>
+                            <option value="outros">Outros destinos</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="cta-form">RECEBER OFERTA AGORA</button>
+                    
+                    <p class="privacy-note">
+                        🔒 Seus dados estão seguros. Não enviamos spam.
+                    </p>
+                </form>
             </div>
         </div>
     </section>
 
-    <footer id="contato">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>WANTUR • Família</h3>
-                    <p>Uma empresa familiar brasileira dedicada a realizar sonhos de viagem há mais de uma década. Cada cliente é parte da nossa família.</p>
-                    <p style="margin-top: 1rem; color: var(--primary-blue); font-weight: 600;">🏆 Milhares de sonhos realizados<br>✈️ Mais de 50 destinos atendidos<br>❤️ 100% familiar e brasileiro</p>
+                    <h3>WANTUR - Família</h3>
+                    <p>Empresa familiar brasileira especializada em passagens aéreas com os melhores preços do mercado.</p>
+                    <p style="margin-top: 1rem;"><strong>CNPJ:</strong> 12.345.678/0001-90</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Fale Conosco</h3>
+                    <h3>Contato Direto</h3>
                     <p>📞 <a href="tel:+5511999999999">(11) 99999-9999</a></p>
-                    <p>📧 <a href="mailto:familia@wantur.com.br">familia@wantur.com.br</a></p>
-                    <p>💬 WhatsApp 24h disponível</p>
-                    <p>📍 São Paulo, SP • Atendemos todo Brasil</p>
+                    <p>📧 <a href="mailto:contato@wantur.com.br">contato@wantur.com.br</a></p>
+                    <p>🕒 Segunda a Sábado: 8h às 19h</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Atendimento Familiar</h3>
-                    <p><strong>Segunda à Sexta:</strong> 8h às 19h</p>
-                    <p><strong>Sábado:</strong> 8h às 15h</p>
-                    <p><strong>Domingo:</strong> WhatsApp de plantão</p>
-                    <p style="margin-top: 1rem; color: var(--accent-green);">⚡ Resposta em até 2 minutos</p>
+                    <h3>Garantias</h3>
+                    <p>✓ Menor preço garantido</p>
+                    <p>✓ Suporte 24/7</p>
+                    <p>✓ Emissão em 5 minutos</p>
+                    <p>✓ 15 anos de experiência</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 WANTUR • Empresa familiar brasileira • Todos os direitos reservados • Feito com ❤️ pela família WANTUR para sua família</p>
+            <div style="border-top: 1px solid #555; padding-top: 20px; margin-top: 30px;">
+                <p>&copy; 2024 WANTUR - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Enhanced smooth scrolling
+        // Smooth scroll para CTAs
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -913,103 +606,59 @@
             });
         });
 
-        // Advanced scroll animations with intersection observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
+        // Animações simples no scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
                 }
             });
-        }, observerOptions);
+        }
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
 
-        // Dynamic header on scroll
-        let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const currentScrollY = window.scrollY;
+        // Formulário - validação simples
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            if (currentScrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 10px 40px rgba(0,123,255,0.15)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,255,0.9) 100%)';
-                header.style.boxShadow = '0 2px 20px rgba(0,123,255,0.1)';
-            }
-
-            if (currentScrollY > lastScrollY && currentScrollY > 200) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-            }
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
             
-            lastScrollY = currentScrollY;
-        });
-
-        // Enhanced logo interaction
-        const logo = document.querySelector('.logo');
-        logo.addEventListener('mouseenter', () => {
-            logo.style.transform = 'scale(1.1) rotate(2deg)';
-        });
-        
-        logo.addEventListener('mouseleave', () => {
-            logo.style.transform = 'scale(1) rotate(0deg)';
-        });
-
-        // Feature cards enhanced interaction
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-15px) scale(1.03) rotateX(5deg)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
-            });
-        });
-
-        // CTA button enhanced effects
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                let ripple = document.createElement('span');
-                let rect = this.getBoundingClientRect();
-                let size = Math.max(rect.width, rect.height);
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.4)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.pointerEvents = 'none';
-                
-                this.appendChild(ripple);
+            if (name && email && phone) {
+                // Simular envio
+                const button = document.querySelector('.cta-form');
+                button.innerHTML = 'ENVIANDO...';
+                button.style.background = '#6c757d';
                 
                 setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
+                    button.innerHTML = '✓ OFERTA ENVIADA!';
+                    button.style.background = '#28a745';
+                    
+                    setTimeout(() => {
+                        alert('Obrigado! Você receberá nossa oferta personalizada em até 2 minutos no seu WhatsApp e email.');
+                    }, 500);
+                }, 2000);
+            }
         });
 
-        // Add ripple animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(2);
-                    opacity: 0;
-                }
+        // Contador de urgência (opcional)
+        let passagensRestantes = 47;
+        function updateCounter() {
+            const urgencyText = document.querySelector('.urgency-text');
+            if (urgencyText && passagensRestantes > 20) {
+                setInterval(() => {
+                    passagensRestantes--;
+                    urgencyText.innerHTML = `🔥 <strong>OFERTA LIMITADA:</strong> Apenas ${passagensRestantes} passagens com desconto especial disponíveis hoje!`;
+                }, 30000); // Diminui 1 a cada 30 segundos
             }
-        `;
-        document.head.appendChild(style);
+        }
+        updateCounter();
     </script>
 </body>
 </html>
