@@ -438,10 +438,10 @@
                     🔥 <strong>OFERTA LIMITADA:</strong> Apenas 50 passagens com desconto especial disponíveis hoje!
                 </div>
 
-                <a href="#formulario" class="cta-primary">QUERO MINHA PASSAGEM AGORA</a>
+                <a href="#formulario" class="cta-primary">FALAR COM NOSSA FAMÍLIA AGORA</a>
                 
                 <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                    ✓ Sem taxas escondidas ✓ Emissão em 5 minutos ✓ Suporte 24h
+                    ✓ Atendimento 100% humano ✓ Resposta em 2 minutos ✓ Sem robôs, só carinho
                 </p>
             </div>
         </div>
@@ -457,9 +457,9 @@
                     <p>Preços exclusivos por sermos empresa familiar. Sem intermediários = mais economia para você.</p>
                 </div>
                 <div class="benefit-item fade-in">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Emissão em 5 Minutos</h3>
-                    <p>Processo 100% digital. Sua passagem confirmada e enviada por email em poucos minutos.</p>
+                    <div class="benefit-icon">💬</div>
+                    <h3>Resposta em 2 Minutos</h3>
+                    <p>Atendimento 100% humano via WhatsApp. Sem robôs, sem espera, só nossa família cuidando de você.</p>
                 </div>
                 <div class="benefit-item fade-in">
                     <div class="benefit-icon">🛡️</div>
@@ -519,46 +519,44 @@
 
     <section id="formulario" class="lead-capture">
         <div class="container">
-            <h2 class="fade-in">Receba Sua Oferta Personalizada</h2>
-            <p class="fade-in">Preencha abaixo e receba em 2 minutos as melhores opções com até 40% de desconto</p>
+            <h2 class="fade-in">Fale Direto com Nossa Família</h2>
+            <p class="fade-in">Só precisamos de 2 informações para começar a cuidar da sua viagem agora mesmo!</p>
             
             <div class="form-container fade-in">
-                <h3>🎯 Encontre Sua Passagem Ideal</h3>
+                <h3>💬 Resposta em Menos de 2 Minutos</h3>
+                <p style="color: #666; margin-bottom: 2rem; font-size: 1rem;">
+                    ✓ Atendimento 100% humano<br>
+                    ✓ Resposta imediata no WhatsApp<br>
+                    ✓ Orçamento personalizado na hora
+                </p>
+                
                 <form>
                     <div class="form-group">
-                        <label for="name">Nome Completo *</label>
-                        <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+                        <label for="name">Primeiro Nome</label>
+                        <input type="text" id="name" name="name" required placeholder="Como podemos te chamar?">
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">WhatsApp *</label>
+                        <label for="phone">Seu WhatsApp</label>
                         <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="destination">Destino de Interesse</label>
-                        <select id="destination" name="destination">
-                            <option value="">Selecione um destino</option>
-                            <option value="orlando">Orlando/Disney</option>
-                            <option value="miami">Miami</option>
-                            <option value="nueva-york">Nova York</option>
-                            <option value="paris">Paris</option>
-                            <option value="londres">Londres</option>
-                            <option value="outros">Outros destinos</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="cta-form">RECEBER OFERTA AGORA</button>
+                    <button type="submit" class="cta-form">QUERO FALAR AGORA</button>
                     
                     <p class="privacy-note">
-                        🔒 Seus dados estão seguros. Não enviamos spam.
+                        💚 <strong>Promessa WANTUR:</strong> Atendimento familiar, sem pressão, só carinho e os melhores preços!
                     </p>
                 </form>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h4 style="margin-bottom: 1rem; color: #fff;">⚡ O que acontece depois:</h4>
+                <div style="text-align: left; color: #fff; opacity: 0.9;">
+                    <p>✅ <strong>1 minuto:</strong> Você recebe nossa mensagem de boas-vindas</p>
+                    <p>✅ <strong>2 minutos:</strong> Nossa família entra em contato via WhatsApp</p>
+                    <p>✅ <strong>5 minutos:</strong> Você recebe 3 opções de passagens com desconto</p>
+                    <p>✅ <strong>10 minutos:</strong> Se gostar, emitimos sua passagem na hora!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -627,23 +625,22 @@
             e.preventDefault();
             
             const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             
-            if (name && email && phone) {
+            if (name && phone) {
                 // Simular envio
                 const button = document.querySelector('.cta-form');
-                button.innerHTML = 'ENVIANDO...';
+                button.innerHTML = 'CONECTANDO...';
                 button.style.background = '#6c757d';
                 
                 setTimeout(() => {
-                    button.innerHTML = '✓ OFERTA ENVIADA!';
+                    button.innerHTML = '✓ PRONTO! AGUARDE NOSSO CONTATO';
                     button.style.background = '#28a745';
                     
                     setTimeout(() => {
-                        alert('Obrigado! Você receberá nossa oferta personalizada em até 2 minutos no seu WhatsApp e email.');
+                        alert(`Oi ${name}! 👋 Nossa família já está preparando as melhores opções para você. Aguarde nossa mensagem no WhatsApp em instantes!`);
                     }, 500);
-                }, 2000);
+                }, 1500);
             }
         });
 
