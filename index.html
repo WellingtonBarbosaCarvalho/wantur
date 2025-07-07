@@ -3,659 +3,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WANTUR - Passagens Aéreas com 40% de Desconto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Simples */
-        header {
-            background: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #007bff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .trust-badge {
-            background: #28a745;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* Hero Section - Foco Total na Conversão */
-        .hero {
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, #f8faff 0%, #fff 100%);
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #333;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: #666;
-            margin-bottom: 3rem;
-            font-weight: 500;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 500px;
-            height: 300px;
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            border-radius: 20px;
-            margin: 2rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* CTA Principal - Máximo Contraste */
-        .cta-primary {
-            background: #ff4757;
-            color: white;
-            padding: 20px 50px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 1rem;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
-        }
-
-        .cta-primary:hover {
-            background: #ff3742;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.4);
-        }
-
-        .urgency-text {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 2rem auto;
-            max-width: 600px;
-            font-weight: 600;
-            color: #856404;
-        }
-
-        /* Benefícios - Layout Limpo */
-        .benefits {
-            padding: 80px 0;
-            background: #fff;
-        }
-
-        .benefits h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #333;
-            margin-bottom: 3rem;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border-left: 5px solid #007bff;
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-item h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .benefit-item p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Prova Social - Elementos de Confiança */
-        .social-proof {
-            padding: 80px 0;
-            background: #f8faff;
-        }
-
-        .social-proof h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #333;
-            margin-bottom: 3rem;
-        }
-
-        .testimonials-simple {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-left: 5px solid #28a745;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: #007bff;
-        }
-
-        .stars {
-            color: #ffc107;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .trust-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-
-        .trust-item {
-            text-align: center;
-            color: #666;
-        }
-
-        .trust-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #007bff;
-            display: block;
-        }
-
-        /* Formulário Otimizado */
-        .lead-capture {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            text-align: center;
-        }
-
-        .lead-capture h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .lead-capture p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .form-container {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            max-width: 500px;
-            margin: 0 auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-
-        .form-container h3 {
-            color: #333;
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        .cta-form {
-            background: #28a745;
-            color: white;
-            padding: 18px 40px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 10px;
-            width: 100%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-
-        .cta-form:hover {
-            background: #1e7e34;
-            transform: translateY(-2px);
-        }
-
-        .privacy-note {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 1rem;
-            text-align: center;
-        }
-
-        /* Footer Simples */
-        footer {
-            background: #333;
-            color: white;
-            padding: 50px 0 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #007bff;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .footer-section p {
-            color: #ccc;
-            line-height: 1.8;
-        }
-
-        .footer-section a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .footer-section a:hover {
-            color: #0056b3;
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .benefits-grid,
-            .testimonials-simple {
-                grid-template-columns: 1fr;
-            }
-            
-            .trust-indicators {
-                gap: 1.5rem;
-            }
-            
-            .form-container {
-                margin: 0 20px;
-                padding: 2rem;
-            }
-        }
-
-        /* Animações Simples */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <title>WANTUR - Passagens Aéreas com até 40% de Desconto | Economia Garantida</title>
+    <meta name="description" content="Economize até R$ 1.800 em passagens aéreas! Atendimento especializado em 2 minutos. +500 famílias já economizaram R$ 180K. Garantia total.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzAwN2JmZiIvPgo8cGF0aCBkPSJNOCA5SDE2TDI0IDlMMjAgMTZMMjQgMjNIMTZIOEwxMiAxNkw4IDlaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
+    
+    <!-- Meta Tags para Conversão -->
+    <meta property="og:title" content="WANTUR - Economize até 40% em Passagens Aéreas">
+    <meta property="og:description" content="Mais de 500 famílias já economizaram R$ 180K em viagens. Atendimento especializado em 2 minutos!">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">WANTUR</div>
-            <div class="trust-badge">✓ Empresa Familiar Confiável</div>
+    <!-- Header com Urgência -->
+    <header id="header">
+        <div class="urgency-bar">
+            <div class="container">
+                <span class="urgency-text">🔥 APENAS HOJE: 27 vagas restantes com desconto de até 40%</span>
+                <div class="countdown" id="countdown">
+                    <span id="hours">23</span>:<span id="minutes">59</span>:<span id="seconds">59</span>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <span class="logo-text">WANTUR</span>
+                    <span class="logo-tagline">Nova Geração</span>
+                </div>
+                <div class="trust-indicators-header">
+                    <div class="trust-item">
+                        <span class="trust-icon">✓</span>
+                        <span>15 anos no mercado</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⭐</span>
+                        <span>4.9/5 satisfação</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🛡️</span>
+                        <span>Garantia total</span>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
+    <!-- Hero Section com Poder Máximo -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Passagens 40% Mais Baratas</h1>
-                <p class="hero-subtitle">Empresa familiar há 15 anos. Mais de 50.000 clientes satisfeitos. Economize até R$ 2.000 por viagem.</p>
-                
-                <div class="hero-image">
-                    👨‍👩‍👧‍👦 ✈️ Famílias Viajando Felizes
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        🏆 #1 EM ECONOMIA DE PASSAGENS NO BRASIL
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="highlight">PARE</span> de Pagar Caro em Passagens!
+                        <span class="sub-title">Economize até <span class="price-highlight">R$ 1.800</span> por viagem</span>
+                    </h1>
+                    
+                    <div class="hero-benefits">
+                        <div class="benefit-row">
+                            <span class="benefit-icon">💰</span>
+                            <span><strong>40% de desconto REAL</strong> - Sem pegadinhas</span>
+                        </div>
+                        <div class="benefit-row">
+                            <span class="benefit-icon">⚡</span>
+                            <span><strong>Resposta em 2 minutos</strong> - Atendimento humano</span>
+                        </div>
+                        <div class="benefit-row">
+                            <span class="benefit-icon">🛡️</span>
+                            <span><strong>Garantia total</strong> - Suporte 24/7</span>
+                        </div>
+                    </div>
+
+                    <div class="social-proof-mini">
+                        <div class="avatars">
+                            <div class="avatar">👨</div>
+                            <div class="avatar">👩</div>
+                            <div class="avatar">👴</div>
+                            <div class="avatar">👵</div>
+                            <div class="avatar">+</div>
+                        </div>
+                        <div class="proof-text">
+                            <strong>+500 famílias</strong> economizaram <strong>R$ 180.000</strong> só este mês
+                        </div>
+                    </div>
+
+                    <div class="cta-section-hero">
+                        <a href="#formulario" class="cta-primary pulse">
+                            <span class="cta-text">QUERO ECONOMIZAR AGORA</span>
+                            <span class="cta-subtext">Resposta em 2 minutos</span>
+                        </a>
+                        <p class="guarantee-text">
+                            ✅ Sem compromisso ✅ Atendimento especializado ✅ Menor preço garantido
+                        </p>
+                    </div>
                 </div>
 
-                <div class="urgency-text">
-                    🔥 <strong>OFERTA LIMITADA:</strong> Apenas 50 passagens com desconto especial disponíveis hoje!
+                <!-- Formulário Lateral Sticky -->
+                <div class="hero-form-container">
+                    <div class="form-urgency">
+                        <span class="urgency-badge">🔥 VAGAS LIMITADAS</span>
+                        <span class="spots-left">Apenas <span id="spotsLeft">27</span> vagas hoje</span>
+                    </div>
+                    
+                    <form class="hero-form" id="heroForm">
+                        <h3 class="form-title">
+                            <span class="form-icon">💬</span>
+                            Fale Direto com Nossos Especialistas
+                        </h3>
+                        
+                        <div class="form-benefits">
+                            <div class="mini-benefit">⚡ Resposta em 2 minutos</div>
+                            <div class="mini-benefit">🎯 Cotação personalizada</div>
+                            <div class="mini-benefit">💰 Até 40% de desconto</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroName">Seu primeiro nome</label>
+                            <input type="text" id="heroName" name="name" required placeholder="Como podemos te chamar?" autocomplete="given-name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroPhone">Seu WhatsApp</label>
+                            <input type="tel" id="heroPhone" name="phone" required placeholder="(11) 99999-9999" autocomplete="tel">
+                        </div>
+
+                        <button type="submit" class="cta-form" id="heroSubmit">
+                            <span class="button-text">RECEBER COTAÇÃO GRÁTIS</span>
+                            <span class="button-icon">🚀</span>
+                        </button>
+
+                        <div class="form-guarantee">
+                            <div class="guarantee-badge">
+                                <span class="guarantee-icon">🛡️</span>
+                                <div>
+                                    <strong>Garantia WANTUR</strong>
+                                    <small>Atendimento sem pressão, focado em você</small>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements para Dinamismo -->
+        <div class="floating-elements">
+            <div class="floating-element" style="top: 20%; left: 10%;">✈️</div>
+            <div class="floating-element" style="top: 60%; right: 15%;">💰</div>
+            <div class="floating-element" style="top: 80%; left: 20%;">🏆</div>
+        </div>
+    </section>
+
+    <!-- Seção de Prova Social Poderosa -->
+    <section class="social-proof-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mais de <span class="highlight-number">500 Famílias</span> Já Economizaram com a WANTUR</h2>
+                <p>Veja alguns resultados reais dos nossos clientes</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card featured">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <div class="client-avatar">👨‍👩‍👧‍👦</div>
+                            <div>
+                                <strong>Família Silva</strong>
+                                <span>São Paulo → Orlando</span>
+                            </div>
+                        </div>
+                        <div class="savings-badge">Economizou R$ 1.800</div>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"Inacreditável! Economizamos quase 2 mil reais na viagem para Disney. Atendimento nota 10, processo super rápido. Recomendo de olhos fechados!"</blockquote>
                 </div>
 
-                <a href="#formulario" class="cta-primary">FALAR COM NOSSA FAMÍLIA AGORA</a>
-                
-                <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                    ✓ Atendimento 100% humano ✓ Resposta em 2 minutos ✓ Sem robôs, só carinho
-                </p>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <div class="client-avatar">👩</div>
+                            <div>
+                                <strong>Maria Costa</strong>
+                                <span>Rio → Europa</span>
+                            </div>
+                        </div>
+                        <div class="savings-badge">Economizou R$ 1.200</div>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"Melhor decisão que tomei! Comprei 3 passagens com eles. Sempre o menor preço e atendimento humanizado."</blockquote>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <div class="client-avatar">👨</div>
+                            <div>
+                                <strong>João Santos</strong>
+                                <span>BH → Buenos Aires</span>
+                            </div>
+                        </div>
+                        <div class="savings-badge">Economizou R$ 950</div>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"Empresa séria, transparente. Senti confiança do primeiro contato até embarcar. Já indiquei para 5 amigos!"</blockquote>
+                </div>
+            </div>
+
+            <div class="stats-showcase">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-label">Cotações Realizadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="180000">0</span>
+                    <span class="stat-label">Reais Economizados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="4.9">0</span>
+                    <span class="stat-label">Avaliação Média ⭐</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span>
+                    <span class="stat-label">% Satisfação</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="benefits">
+    <!-- Seção Por Que Escolher -->
+    <section class="why-choose">
         <div class="container">
-            <h2 class="fade-in">Por Que Escolher a WANTUR?</h2>
+            <div class="section-header">
+                <h2>Por Que a WANTUR é Sua <span class="highlight">Melhor Escolha</span>?</h2>
+                <p>Descubra os diferenciais que nos tornam únicos no mercado</p>
+            </div>
+
             <div class="benefits-grid">
-                <div class="benefit-item fade-in">
+                <div class="benefit-card">
                     <div class="benefit-icon">💰</div>
-                    <h3>Economia Real de 40%</h3>
-                    <p>Preços exclusivos por sermos empresa familiar. Sem intermediários = mais economia para você.</p>
+                    <h3>Economia Real de até 40%</h3>
+                    <p><strong>Preços exclusivos</strong> por sermos empresa familiar. Sem intermediários = mais economia direta para você.</p>
+                    <div class="benefit-proof">Último cliente economizou R$ 1.800</div>
                 </div>
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">💬</div>
-                    <h3>Resposta em 2 Minutos</h3>
-                    <p>Atendimento 100% humano via WhatsApp. Sem robôs, sem espera, só nossa família cuidando de você.</p>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Resposta em Apenas 2 Minutos</h3>
+                    <p><strong>Atendimento 100% humano</strong> via WhatsApp. Sem robôs, sem espera, só nossa família cuidando de você.</p>
+                    <div class="benefit-proof">Tempo médio de resposta: 1min 47seg</div>
                 </div>
-                <div class="benefit-item fade-in">
+
+                <div class="benefit-card">
                     <div class="benefit-icon">🛡️</div>
-                    <h3>Garantia Total</h3>
-                    <p>Suporte 24/7 e proteção completa. Se algo der errado, resolvemos na hora.</p>
+                    <h3>Garantia e Suporte Total</h3>
+                    <p><strong>Proteção completa</strong> em toda sua jornada. Se algo der errado, resolvemos imediatamente.</p>
+                    <div class="benefit-proof">Suporte 24/7 disponível</div>
                 </div>
-                <div class="benefit-item fade-in">
+
+                <div class="benefit-card">
                     <div class="benefit-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Atendimento Familiar</h3>
-                    <p>15 anos cuidando de famílias brasileiras. Cada cliente é tratado como família.</p>
+                    <h3>15 Anos de Tradição Familiar</h3>
+                    <p><strong>Experiência comprovada</strong> cuidando de famílias brasileiras. Cada cliente é tratado como família.</p>
+                    <div class="benefit-proof">CNPJ: 12.345.678/0001-90</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="social-proof">
+    <!-- Como Funciona -->
+    <section class="how-it-works">
         <div class="container">
-            <h2 class="fade-in">O Que Nossos Clientes Dizem</h2>
-            <div class="testimonials-simple">
-                <div class="testimonial fade-in">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Economizei R$ 1.800 na viagem da família para Orlando. Atendimento impecável e processo super rápido!"</p>
-                    <div class="testimonial-author">- Maria Silva, São Paulo</div>
+            <div class="section-header">
+                <h2>Como Funciona o <span class="highlight">Processo WANTUR</span></h2>
+                <p>Do primeiro contato até sua viagem dos sonhos em apenas 4 passos</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Você Preenche o Formulário</h3>
+                        <p>Apenas nome e WhatsApp. Leva menos de 30 segundos.</p>
+                        <span class="step-time">⏱️ 30 segundos</span>
+                    </div>
                 </div>
-                <div class="testimonial fade-in">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Melhor preço que encontrei no mercado. Empresa séria, já comprei 3 passagens com eles."</p>
-                    <div class="testimonial-author">- João Santos, Rio de Janeiro</div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Nossa Equipe Te Contacta</h3>
+                        <p>Especialista dedicado entra em contato via WhatsApp.</p>
+                        <span class="step-time">⏱️ Em até 2 minutos</span>
+                    </div>
                 </div>
-                <div class="testimonial fade-in">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Atendimento familiar faz toda diferença. Senti confiança do início ao fim da compra."</p>
-                    <div class="testimonial-author">- Ana Costa, Belo Horizonte</div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Recebe 3 Melhores Opções</h3>
+                        <p>Cotações personalizadas com até 40% de desconto.</p>
+                        <span class="step-time">⏱️ Em 5 minutos</span>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Emissão Imediata</h3>
+                        <p>Gostou? Emitimos sua passagem na hora com segurança total.</p>
+                        <span class="step-time">⏱️ Em 10 minutos</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="trust-indicators fade-in">
-                <div class="trust-item">
-                    <span class="trust-number">50.000+</span>
-                    <div>Clientes Atendidos</div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">15</span>
-                    <div>Anos no Mercado</div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">98%</span>
-                    <div>Satisfação</div>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">24h</span>
-                    <div>Suporte</div>
+            <div class="process-guarantee">
+                <div class="guarantee-box">
+                    <h4>🛡️ Garantia de Satisfação 100%</h4>
+                    <p>Se não encontrarmos um preço melhor que o mercado, devolvemos seu tempo com um voucher de R$ 100 para próxima viagem!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="formulario" class="lead-capture">
+    <!-- Formulário Principal com Urgência Máxima -->
+    <section id="formulario" class="main-form-section">
         <div class="container">
-            <h2 class="fade-in">Fale Direto com Nossa Família</h2>
-            <p class="fade-in">Só precisamos de 2 informações para começar a cuidar da sua viagem agora mesmo!</p>
-            
-            <div class="form-container fade-in">
-                <h3>💬 Resposta em Menos de 2 Minutos</h3>
-                <p style="color: #666; margin-bottom: 2rem; font-size: 1rem;">
-                    ✓ Atendimento 100% humano<br>
-                    ✓ Resposta imediata no WhatsApp<br>
-                    ✓ Orçamento personalizado na hora
-                </p>
-                
-                <form>
-                    <div class="form-group">
-                        <label for="name">Primeiro Nome</label>
-                        <input type="text" id="name" name="name" required placeholder="Como podemos te chamar?">
+            <div class="form-wrapper">
+                <div class="form-content">
+                    <div class="urgency-header">
+                        <div class="urgency-badge-large">
+                            <span class="urgent-icon">🔥</span>
+                            <div>
+                                <strong>ÚLTIMAS VAGAS COM DESCONTO</strong>
+                                <small>Apenas <span id="mainSpotsLeft">27</span> vagas restantes hoje</small>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Seu WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
+
+                    <h2>Fale Direto com Nossos Especialistas</h2>
+                    <p class="form-subtitle">Nossa equipe está online AGORA esperando seu contato para encontrar as melhores opções para você!</p>
+
+                    <div class="form-benefits-main">
+                        <div class="benefit-item-main">
+                            <span class="icon">✅</span>
+                            <span>Atendimento especializado sem robôs</span>
+                        </div>
+                        <div class="benefit-item-main">
+                            <span class="icon">✅</span>
+                            <span>Resposta garantida em menos de 2 minutos</span>
+                        </div>
+                        <div class="benefit-item-main">
+                            <span class="icon">✅</span>
+                            <span>Cotação personalizada na hora</span>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="cta-form">QUERO FALAR AGORA</button>
-                    
-                    <p class="privacy-note">
-                        💚 <strong>Promessa WANTUR:</strong> Atendimento familiar, sem pressão, só carinho e os melhores preços!
-                    </p>
-                </form>
-            </div>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                <h4 style="margin-bottom: 1rem; color: #fff;">⚡ O que acontece depois:</h4>
-                <div style="text-align: left; color: #fff; opacity: 0.9;">
-                    <p>✅ <strong>1 minuto:</strong> Você recebe nossa mensagem de boas-vindas</p>
-                    <p>✅ <strong>2 minutos:</strong> Nossa família entra em contato via WhatsApp</p>
-                    <p>✅ <strong>5 minutos:</strong> Você recebe 3 opções de passagens com desconto</p>
-                    <p>✅ <strong>10 minutos:</strong> Se gostar, emitimos sua passagem na hora!</p>
+
+                    <form class="main-form" id="mainForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mainName">Seu primeiro nome</label>
+                                <input type="text" id="mainName" name="name" required placeholder="Como podemos te chamar?" autocomplete="given-name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mainPhone">Seu WhatsApp</label>
+                                <input type="tel" id="mainPhone" name="phone" required placeholder="(11) 99999-9999" autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="cta-main-form" id="mainSubmit">
+                            <span class="button-text">QUERO FALAR COM ESPECIALISTA AGORA</span>
+                            <span class="button-guarantee">Resposta em 2 minutos garantida</span>
+                        </button>
+
+                        <div class="form-security">
+                            <div class="security-badges">
+                                <span class="badge">🔒 100% Seguro</span>
+                                <span class="badge">📱 Via WhatsApp</span>
+                                <span class="badge">🚫 Sem Spam</span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="what-happens-next">
+                        <h4>⚡ O que acontece depois:</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="time">1 min</span>
+                                <span class="action">Mensagem de boas-vindas no seu WhatsApp</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="time">2 min</span>
+                                <span class="action">Especialista entra em contato para entender sua necessidade</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="time">5 min</span>
+                                <span class="action">Você recebe 3 opções personalizadas com desconto</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="time">10 min</span>
+                                <span class="action">Emissão da sua passagem (se aprovada)</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>WANTUR - Família</h3>
-                    <p>Empresa familiar brasileira especializada em passagens aéreas com os melhores preços do mercado.</p>
-                    <p style="margin-top: 1rem;"><strong>CNPJ:</strong> 12.345.678/0001-90</p>
+                    <div class="footer-logo">
+                        <span class="logo-text">WANTUR</span>
+                        <span class="logo-tagline">Nova Geração</span>
+                    </div>
+                    <p>Agência de viagens moderna especializada em passagens aéreas com tecnologia de ponta e os melhores preços do mercado.</p>
+                    <div class="company-info">
+                        <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
+                        <p><strong>15 anos</strong> cuidando de famílias brasileiras</p>
+                    </div>
                 </div>
+
                 <div class="footer-section">
                     <h3>Contato Direto</h3>
-                    <p>📞 <a href="tel:+5511999999999">(11) 99999-9999</a></p>
-                    <p>📧 <a href="mailto:contato@wantur.com.br">contato@wantur.com.br</a></p>
-                    <p>🕒 Segunda a Sábado: 8h às 19h</p>
+                    <div class="contact-items">
+                        <a href="tel:+5511999999999" class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>(11) 99999-9999</span>
+                        </a>
+                        <a href="mailto:contato@wantur.com.br" class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>contato@wantur.com.br</span>
+                        </a>
+                        <div class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <span>Segunda a Sábado: 8h às 19h</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="footer-section">
-                    <h3>Garantias</h3>
-                    <p>✓ Menor preço garantido</p>
-                    <p>✓ Suporte 24/7</p>
-                    <p>✓ Emissão em 5 minutos</p>
-                    <p>✓ 15 anos de experiência</p>
+                    <h3>Nossos Diferenciais</h3>
+                    <ul class="differentials-list">
+                        <li>✓ Menor preço garantido</li>
+                        <li>✓ Resposta em 2 minutos</li>
+                        <li>✓ Suporte 24/7</li>
+                        <li>✓ Emissão em 5 minutos</li>
+                        <li>✓ Tecnologia de ponta</li>
+                        <li>✓ Atendimento familiar</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Garantias e Segurança</h3>
+                    <div class="security-badges-footer">
+                        <div class="security-badge">
+                            <span class="badge-icon">🛡️</span>
+                            <span>Empresa Licenciada</span>
+                        </div>
+                        <div class="security-badge">
+                            <span class="badge-icon">🔒</span>
+                            <span>Dados Protegidos</span>
+                        </div>
+                        <div class="security-badge">
+                            <span class="badge-icon">⭐</span>
+                            <span>4.9/5 Satisfação</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid #555; padding-top: 20px; margin-top: 30px;">
-                <p>&copy; 2024 WANTUR - Todos os direitos reservados</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 WANTUR - Todos os direitos reservados | Developed for High Conversion</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scroll para CTAs
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animações simples no scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Formulário - validação simples
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            
-            if (name && phone) {
-                // Simular envio
-                const button = document.querySelector('.cta-form');
-                button.innerHTML = 'CONECTANDO...';
-                button.style.background = '#6c757d';
-                
-                setTimeout(() => {
-                    button.innerHTML = '✓ PRONTO! AGUARDE NOSSO CONTATO';
-                    button.style.background = '#28a745';
-                    
-                    setTimeout(() => {
-                        alert(`Oi ${name}! 👋 Nossa família já está preparando as melhores opções para você. Aguarde nossa mensagem no WhatsApp em instantes!`);
-                    }, 500);
-                }, 1500);
-            }
-        });
-
-        // Contador de urgência (opcional)
-        let passagensRestantes = 47;
-        function updateCounter() {
-            const urgencyText = document.querySelector('.urgency-text');
-            if (urgencyText && passagensRestantes > 20) {
-                setInterval(() => {
-                    passagensRestantes--;
-                    urgencyText.innerHTML = `🔥 <strong>OFERTA LIMITADA:</strong> Apenas ${passagensRestantes} passagens com desconto especial disponíveis hoje!`;
-                }, 30000); // Diminui 1 a cada 30 segundos
-            }
-        }
-        updateCounter();
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
